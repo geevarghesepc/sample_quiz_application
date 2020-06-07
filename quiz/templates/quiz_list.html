@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Take a Quiz {% endblock %}
+
+{% block content %}
+  <ul >
+      {% for quiz in quizes %}
+
+         <li><a href="{% url 'quiz:start_quiz' %}?id={{quiz.id}}">{{quiz.name}}</a></li>
+        {% endfor %}
+  </ul>
+{% endblock %}

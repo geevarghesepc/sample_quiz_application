@@ -1,0 +1,30 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  {{static}}
+     {% block title %}
+    {% endblock %}
+</head>
+<body>
+
+  <!-- main page content here -->
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <!-- Main content -->
+      <section class="content">
+
+        {% block content %}
+
+
+        {% endblock %}
+      </section>
+      <!-- /.content -->
+    </div>
+
+</body>
+</html>
