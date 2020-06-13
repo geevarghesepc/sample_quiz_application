@@ -25,3 +25,13 @@ class QuestionList(generics.ListCreateAPIView):
 class QuestionDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
+
+
+class OptionList(generics.ListCreateAPIView):
+    queryset = Options.objects.all()
+    serializer_class = QuestionSerializer
+
+
+class OptionDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Options.objects.all()
+    serializer_class = QuestionSerializer
