@@ -9,3 +9,11 @@ class QuizSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class QuestionSerializer(serializers.ModelSerializer):
+    options = serializers.PrimaryKeyRelatedField(queryset=Options.objects.all(), many=True)
+
+    class Meta:
+        model = Question
+        fields = '__all__'
+
+

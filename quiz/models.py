@@ -28,16 +28,7 @@ class Options(models.Model):
 class Question(models.Model):
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     question = models.CharField(max_length=200)
-
-    option_a = models.ForeignKey(Options, on_delete=models.DO_NOTHING, related_name='option_a')
-    option_b = models.ForeignKey(Options, on_delete=models.DO_NOTHING, related_name='option_b')
-    option_c = models.ForeignKey(Options, on_delete=models.DO_NOTHING, related_name='option_c')
-    option_d = models.ForeignKey(Options, on_delete=models.DO_NOTHING, related_name='option_d')
-
-    # option_a = models.CharField(max_length=100)
-    # option_b = models.CharField(max_length=100)
-    # option_c = models.CharField(max_length=100)
-    # option_d = models.CharField(max_length=100)
+    options = models.ManyToManyField(Options, related_name="options", blank=True)
     answer = models.ForeignKey(Options, on_delete=models.DO_NOTHING)
     score = models.IntegerField(default=1)
     created_on = models.DateTimeField(auto_now=True)
